@@ -45,6 +45,27 @@ This project is a RESTful API that provides functionality similar to Calendly, a
    ```
    npm start
    ```
+## Running with PM2
+
+To run the application using PM2:
+
+1. Install PM2 globally if you haven't already:
+   ```
+   npm install -g pm2
+   ```
+
+2. Start the application:
+   ```
+   npm run pm2:start
+   ```
+
+3. Other PM2 commands:
+   - Stop the application: `npm run pm2:stop`
+   - Restart the application: `npm run pm2:restart`
+   - View logs: `npm run pm2:logs`
+   - List PM2 processes: `npm run pm2:list`
+
+For more advanced PM2 usage, refer to the `ecosystem.config.js` file and PM2 documentation.
 
 ## API Endpoints
 
