@@ -19,5 +19,6 @@
     "nodemon": "^3.1.7",
     "pug": "2.0.0-beta11",
     "winston": "^3.3.3"
-  }
+  },
+  "license" : "ISC"
 }
