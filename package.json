@@ -4,8 +4,14 @@
   "description": "REST APIs for a Calendly-like application",
   "main": "src/app.js",
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "pm2:start": "pm2 start app.js --name calendly-api",
+    "pm2:stop": "pm2 stop calendly-api",
+    "pm2:restart": "pm2 restart calendly-api",
+    "pm2:delete": "pm2 delete calendly-api",
+    "pm2:logs": "pm2 logs calendly-api",
+    "pm2:list": "pm2 list"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
