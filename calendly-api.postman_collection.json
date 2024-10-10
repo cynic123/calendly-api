@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "6b45e598-12c3-44ed-b670-27d4c82b1b64",
+		"name": "calendly-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "784416"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Hope it is working\",\n    \"email\": \"hopeitisworking@gmail.com\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"users",
+						"create"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/api/users \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"timezone\": \"America/New_York\"\n  }'"
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/users/67057bd111a6e2d389453fdc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"users",
+						"67057bd111a6e2d389453fdc"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:3000/api/users/user_id_here"
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Updated\",\n    \"email\": \"john_updated@example.com\",\n    \"timezone\": \"Europe/London\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/users/67057bd111a6e2d389453fdc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"users",
+						"67057bd111a6e2d389453fdc"
+					]
+				},
+				"description": "Generated from cURL: curl -X PUT http://localhost:3000/api/users/user_id_here \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"name\": \"John Updated\",\n    \"email\": \"john_updated@example.com\",\n    \"timezone\": \"Europe/London\"\n  }'"
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/users/67057bd111a6e2d389453fdc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"users",
+						"67057bd111a6e2d389453fdc"
+					]
+				},
+				"description": "Generated from cURL: curl -X DELETE http://localhost:3000/api/users/user_id_here"
+			},
+			"response": []
+		},
+		{
+			"name": "set availability",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"hopeitisworking@gmail.com\",\n    \"timezone\": \"Asia/Kolkata\",\n    \"availabilities\": [\n      {\n        \"date\": \"2024-10-23\",\n        \"timeSlots\": [\n            {\n                \"start\": \"12:30\",\n                \"end\": \"13:30\"\n            },\n            {\n                \"start\": \"14:15\",\n                \"end\": \"15:15\"\n            }\n        ]\n      }\n    ]\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/availability/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"availability",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:3000/api/availability \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"userId\": \"user_id_here\",\n    \"availabilities\": [\n      {\n        \"date\": \"2023-05-20\",\n        \"timeSlots\": [\n          {\n            \"start\": \"2023-05-20T09:00:00\",\n            \"end\": \"2023-05-20T17:00:00\"\n          }\n        ]\n      }\n    ]\n  }'"
+			},
+			"response": []
+		},
+		{
+			"name": "get availability by date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/availability/date/sofarsogood@gmail.com?date=2024-10-23&timezone=Asia/Kolkata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"availability",
+						"date",
+						"sofarsogood@gmail.com"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-10-23"
+						},
+						{
+							"key": "timezone",
+							"value": "Asia/Kolkata"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:9090/api/availability/date/user@example.com?date=2023-05-20&timezone=Asia/Kolkata'"
+			},
+			"response": []
+		},
+		{
+			"name": "get availability by range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/availability/range/hopeitisworking@gmail.com?startDate=2024-10-15&endDate=2024-10-25&timezone=Asia/Kolkata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"availability",
+						"range",
+						"hopeitisworking@gmail.com"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2024-10-15"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-10-25"
+						},
+						{
+							"key": "timezone",
+							"value": "Asia/Kolkata"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl \"http://localhost:3000/api/availability/user_id_here?startDate=2023-05-01&endDate=2023-05-31\""
+			},
+			"response": []
+		},
+		{
+			"name": "book appointment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"hostEmail\": \"sofarsogood@gmail.com\",\n    \"attendeeEmail\": \"hopeitisworking@gmail.com\",\n    \"startTime\": \"2024-10-23 12:30\",\n    \"endTime\": \"2024-10-23 13:00\",\n    \"timezone\": \"Asia/Kolkata\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"appointments"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:9090/appointments' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"hostEmail\": \"host@example.com\",\n    \"attendeeEmail\": \"attendee@example.com\",\n    \"startTime\": \"2024-10-21 10:00\",\n    \"endTime\": \"2024-10-21 11:00\",\n    \"timezone\": \"Asia/Kolkata\"\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "get appointments by date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/appointments/date?email=sofarsogood@gmail.com&date=2024-10-23&timezone=Asia/Kolkata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"appointments",
+						"date"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "sofarsogood@gmail.com"
+						},
+						{
+							"key": "date",
+							"value": "2024-10-23"
+						},
+						{
+							"key": "timezone",
+							"value": "Asia/Kolkata"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:9090/api/appointments/date?email=user@example.com&date=2023-05-20&timezone=Asia/Kolkata'"
+			},
+			"response": []
+		},
+		{
+			"name": "get appointments by range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/appointments/range?email=sofarsogood@gmail.com&startDate=2024-10-15&endDate=2024-10-25&timezone=Asia/Kolkata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"appointments",
+						"range"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "sofarsogood@gmail.com"
+						},
+						{
+							"key": "startDate",
+							"value": "2024-10-15"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-10-25"
+						},
+						{
+							"key": "timezone",
+							"value": "Asia/Kolkata"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel appointment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"sofarsogood@gmail.com\",\n    \"timezone\": \"Asia/Kolkata\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/appointments/67069f2638b4b3f82777ab0d/cancel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"appointments",
+						"67069f2638b4b3f82777ab0d",
+						"cancel"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request PUT 'http://localhost:9090/appointments/670686c0e97cf17bced0f819/cancel' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"email\": \"sofarsogood@gmail.com\",\n    \"timezone\": \"Asia/Kolkata\"\n}'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "reschedule appointment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"sofarsogood@gmail.com\",\n    \"newStartTime\": \"2024-10-23 14:30\",\n    \"newEndTime\": \"2024-10-23 15:00\",\n    \"timezone\": \"Asia/Kolkata\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/appointments/6706db7c6cb0e0c699a2a933/reschedule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"appointments",
+						"6706db7c6cb0e0c699a2a933",
+						"reschedule"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request PUT 'http://localhost:9090/appointments/67069f2638b4b3f82777ab0d/reschedule' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"email\": \"sofarsogood@gmail.com\",\n    \"newStartTime\": \"2024-10-23 14:00\",\n    \"newEndTime\": \"2024-10-23 14:30\",\n    \"timezone\": \"Asia/Kolkata\"\n}'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "find overlap by date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/appointments/overlap/date?email1=sofarsogood@gmail.com&email2=hopeitisworking@gmail.com&date=2024-10-23&timezone=Asia/Kolkata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"appointments",
+						"overlap",
+						"date"
+					],
+					"query": [
+						{
+							"key": "email1",
+							"value": "sofarsogood@gmail.com"
+						},
+						{
+							"key": "email2",
+							"value": "hopeitisworking@gmail.com"
+						},
+						{
+							"key": "date",
+							"value": "2024-10-23"
+						},
+						{
+							"key": "timezone",
+							"value": "Asia/Kolkata"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:9090/api/appointments/overlap/date?email1=user1@example.com&email2=user2@example.com&date=2023-05-15&timezone=Asia/Kolkata'"
+			},
+			"response": []
+		},
+		{
+			"name": "find overlap by range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/appointments/overlap/range?email1=sofarsogood@gmail.com&email2=hopeitisworking@gmail.com&startDate=2024-10-15&endDate=2024-10-31&timezone=Asia/Kolkata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"appointments",
+						"overlap",
+						"range"
+					],
+					"query": [
+						{
+							"key": "email1",
+							"value": "sofarsogood@gmail.com"
+						},
+						{
+							"key": "email2",
+							"value": "hopeitisworking@gmail.com"
+						},
+						{
+							"key": "startDate",
+							"value": "2024-10-15"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-10-31"
+						},
+						{
+							"key": "timezone",
+							"value": "Asia/Kolkata"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:9090/api/appointments/overlap?email1=user1@example.com&email2=user2@example.com&startDate=2023-05-01&endDate=2023-05-31&timezone=Asia/Kolkata'"
+			},
+			"response": []
+		}
+	]
+}
