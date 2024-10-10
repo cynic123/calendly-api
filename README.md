@@ -183,6 +183,12 @@ For more advanced PM2 usage, refer to the `ecosystem.config.js` file and PM2 doc
   ```bash
   curl --location 'http://localhost:9090/appointments/overlap/range?email1=sofarsogood%40gmail.com&email2=hopeitisworking%40gmail.com&startDate=2024-10-15&endDate=2024-10-31&timezone=Asia%2FKolkata'
   ```
+## Accessing the deployed application
+Use the following DNS and port in the above cURL requests to access the deployed application:
+- `DNS`: ec2-65-0-81-77.ap-south-1.compute.amazonaws.com
+- `Port`: 3030
+- `Example`: http://ec2-65-0-81-77.ap-south-1.compute.amazonaws.com:3030/users/6707071763c89a5bafd105a1
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
