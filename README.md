@@ -47,7 +47,7 @@ This project is a RESTful API that provides functionality similar to Calendly, a
    ```
 ## Running with PM2
 
-To run the application using PM2:
+PM2 (https://pm2.keymetrics.io/) is an advanced Node process manager for running applications developed with Node.Js. To run the application using PM2:
 
 1. Install PM2 globally if you haven't already:
    ```
@@ -68,6 +68,7 @@ To run the application using PM2:
 For more advanced PM2 usage, refer to the `ecosystem.config.js` file and PM2 documentation.
 
 ## API Endpoints
+The sample postman collection is attached with the project. Feel free to import the same into your postman app.
 
 ### User Routes
 
