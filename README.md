@@ -198,4 +198,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the ISC License.
 
+## Remarks
+This application is a simplified example of how a calendly like application can be designed. It does not include key areas such as authentication, authorization, security, or other performance and scalability considerations. In a real production environment, developers must address these aspects as needed.
+
 
